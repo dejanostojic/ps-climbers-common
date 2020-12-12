@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dostojic.climbers.communication;
+package com.dostojic.climbers.common.communication;
 
 import java.io.Serializable;
 

@@ -3,31 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dostojic.climbers.communication;
+package com.dostojic.climbers.common.communication;
 
 import java.io.BufferedOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.Socket;
 
 /**
  *
  * @author planina
  */
-public class Sender {
+public class Receiver{
     private Socket socket;
 
-    public Sender(Socket socket) {
+    public Receiver(Socket socket) {
         this.socket = socket;
     }
     
-    public void send(Object object) throws Exception{
+    public Object receive() throws Exception{
         try{
-            ObjectOutputStream out=new ObjectOutputStream(new BufferedOutputStream(socket.getOutputStream()));
-            out.writeObject(object);
-            out.flush();
+            ObjectInputStream in=new ObjectInputStream(socket.getInputStream());
+            return in.readObject();
         }catch(Exception e){
             e.printStackTrace();
-            throw new Exception("Error sending object!\n"+e.getMessage());
+            throw new Exception("Error receiving object!\n"+e.getMessage());
         }
     }
 }
