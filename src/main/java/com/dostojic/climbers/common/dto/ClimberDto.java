@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dostojic.climbers.domain;
+package com.dostojic.climbers.common.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -12,23 +12,24 @@ import java.util.Objects;
  *
  * @author planina
  */
-public class Climber implements Serializable {
+public class ClimberDto implements Serializable {
 
     private Integer id;
     private String firstName;
     private String lastName;
     private Integer yearOfBirth;
+    
 
-    public Climber() {
+    public ClimberDto() {
     }
 
-    public Climber(String firstName, String lastName, Integer yearOfBirth) {
+    public ClimberDto(String firstName, String lastName, Integer yearOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
     }
 
-    public Climber(Integer id, String firstName, String lastName, Integer yearOfBirth) {
+    public ClimberDto(Integer id, String firstName, String lastName, Integer yearOfBirth) {
         this(firstName, lastName, yearOfBirth);
         this.id = id;
     }
@@ -88,7 +89,7 @@ public class Climber implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Climber other = (Climber) obj;
+        final ClimberDto other = (ClimberDto) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

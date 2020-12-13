@@ -3,36 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dostojic.climbers.dto;
+package com.dostojic.climbers.common.dto;
+
+import java.io.Serializable;
 
 /**
  *
  * @author planina
  */
-public class LoginCredentials {
-    private String username;
-    private String password;
+public class LoginCredentialsDto implements Serializable {
+    private final String username;
+    private final String password;
 
-    public LoginCredentials(String username, String password) {
+    public LoginCredentialsDto(String username, String password) {
         this.username = username;
         this.password = password;
+        validate();
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    private void validate() {
+        System.out.println("TODO: validate username and pass (e.g) must not be null or empty string");
     }
-    
     
 }

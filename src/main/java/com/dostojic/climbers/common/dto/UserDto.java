@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dostojic.climbers.domain;
+package com.dostojic.climbers.common.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -12,17 +12,17 @@ import java.util.Objects;
  *
  * @author planina
  */
-public class User implements Serializable{
+public class UserDto implements Serializable{
     private Long id;
     private String firstName;
     private String lastName;
     private String username;
     private String password;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(Long id, String firstName, String lastName, String username, String password) {
+    public UserDto(Long id, String firstName, String lastName, String username, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -76,7 +76,7 @@ public class User implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final User other = (User) obj;
+        final UserDto other = (UserDto) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
