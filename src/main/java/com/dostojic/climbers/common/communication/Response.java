@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author planina
  */
-public class Response  implements Serializable{
+public class Response implements Serializable {
+
     private Object result;
     private Exception exception;
 
@@ -38,6 +39,10 @@ public class Response  implements Serializable{
     public void setResult(Object result) {
         this.result = result;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Response{" + "result=" + result + ", exception=" + exception + '}';
+    }
+
 }
