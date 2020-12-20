@@ -23,6 +23,7 @@ public class Sender {
     public void send(Object object) throws Exception{
         try{
             ObjectOutputStream out=new ObjectOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+            System.out.println("DEBUG: sending: " + object);
             out.writeObject(object);
             out.flush();
         }catch(Exception e){

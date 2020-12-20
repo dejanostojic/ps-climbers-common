@@ -15,5 +15,7 @@ public enum Operation implements Serializable{
     LOGIN,
     GET_ALL_CLIMBERS,
     FIND_CLIMBER,
-    DELETE_CLIMBER
+    DELETE_CLIMBER,
+    UPDATE_CLIMBER,
+    SAVE_CLIMBER
 }

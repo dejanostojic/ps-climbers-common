@@ -5,30 +5,32 @@
  */
 package com.dostojic.climbers.common.communication;
 
-import java.io.BufferedOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.Socket;
 
 /**
  *
  * @author planina
  */
-public class Receiver{
+public class Receiver {
+
     private Socket socket;
 
     public Receiver(Socket socket) {
         this.socket = socket;
     }
-    
-    public Object receive() throws Exception{
-        try{
-            ObjectInputStream in=new ObjectInputStream(socket.getInputStream());
-            return in.readObject();
-        }catch(Exception e){
+
+    public Object receive() throws Exception {
+        try {
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+            Object object = in.readObject();
+
+            System.out.println("DEBUG: recieving: " + object);
+
+            return object;
+        } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Error receiving object!\n"+e.getMessage());
+            throw new Exception("Error receiving object!\n" + e.getMessage());
         }
     }
 }
