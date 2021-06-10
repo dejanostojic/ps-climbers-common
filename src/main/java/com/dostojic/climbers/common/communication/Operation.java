@@ -20,6 +20,7 @@ public enum Operation implements Serializable{
     SAVE_CLIMBER,
     SAVE_COMPETITION,
     SEARCH_COMPETITIONS,
+    SEARCH_CLIMBERS,
     FIND_COMPETITION,
     UPDATE_COMPETITION
 }
